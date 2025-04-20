@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Farmer Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f9f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #4CAF50;
+      padding: 1rem;
+      text-align: center;
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    form {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    form input, form select {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #45a049;
+    }
+
+    .product-list {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .product-card {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .product-card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .product-card h4 {
+      margin: 0.5rem 0 0.2rem 0;
+    }
+
+    .product-card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  🌾 Farmer Dashboard
+</header>
+
+<div class="container">
+  <form id="productForm">
+    <h2>Add New Product</h2>
+    <input type="text" id="name" placeholder="Product Name" required />
+    <input type="text" id="type" placeholder="Type (e.g. Vegetable, Fruit)" required />
+    <input type="number" id="quantity" placeholder="Quantity" required />
+    <select id="unit" required>
+      <option value="">Select Unit</option>
+      <option value="kg">kg</option>
+      <option value="liters">liters</option>
+      <option value="pcs">pcs</option>
+    </select>
+    <input type="number" id="price_per_unit" placeholder="Price per Unit" required />
+    <input type="url" id="image_url" placeholder="Image URL" required />
+    <input type="text" id="farmer_id" placeholder="Farmer ID" required />
+    <button type="submit">Add Product</button>
+  </form>
+
+  <section>
+    <h2>My Products</h2>
+    <div class="product-list" id="productList">
+      <!-- Product cards appear here -->
+    </div>
+  </section>
+</div>
+
+<script src="farmer-dashboard.html"></script>
+
+</body>
+</html>
